@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * rotat_first - rotates the first element to the bottom and  the second to the top
+ * rotat_first - rotthe first element to the bottom and  the second to the top
  *
  * @doubly: head of the linked list
  * @cline: line number;
