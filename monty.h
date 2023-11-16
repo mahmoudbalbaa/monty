@@ -3,6 +3,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <unistd.h>
+#include <stdarg.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -33,5 +37,14 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+/* func_func.c */
+void func_call(op_func func, char *op, char *val, int ln, int format);
+void func_find(char *opcode, char *value, int ln, int format);
+/* file_func.c */
+int line_parse(char *buffer, int line_number, int format);
+void file_read(FILE *f);
+void file_open(char *file);
+void stack_print(stack_t **stack, unsigned int line_number);
+void push_to_stack(stack_t **new_node, __attribute__((unused))unsigned int ln);
 
 #endif /* _MONTY_H_ */
